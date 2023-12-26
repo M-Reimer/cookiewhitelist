@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <form>
+      <h1 data-i18n-id="general_headline">General settings</h1>
+      <p>
+        Enable the first checkbox as soon as you configured your whitelist below. The second checkbox is optional but should be enabled for proper tracking protection.
+      </p>
+      <input type="checkbox" id="clearcookies_checkbox"/>
+      <label for="clearcookies_checkbox" data-i18n-id="clearcookies_label">Delete cookies, except from whitelisted domains, when Firefox is closed</label>
+      <br/>
+      <input type="checkbox" id="clearstorage_checkbox"/>
+      <label for="clearstorage_checkbox" data-i18n-id="clearstorage_label">Delete localStorage and indexedDB <b>for all domains</b> when Firefox is closed</label>
+
+      <h1 data-i18n-id="spoofing_headline">Domain whitelist</h1>
+      <p>
+        Add domains to your whitelist by enabling the checkbox to its left.
+      </p>
+      <table cellspacing="0">
+        <thead>
+          <tr>
+            <th>WL</th>
+            <th>Domain</th>
+            <th>Cookies</th>
+          </tr>
+        </thead>
+        <tbody id="domains_body">
+        </tbody>
+      </table>
+    </form>
+    <!--<script src="utils/html-i18n.js"></script>-->
+    <script src="options.js"></script>
+  </body>
+</html>

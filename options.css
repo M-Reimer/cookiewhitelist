@@ -1,0 +1,24 @@
+:root {
+  --page-bg-color: #fff;
+  --page-fg-color: #15141a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg-color: #23222b;
+    --page-fg-color: #fbfbfe;
+  }
+}
+
+body {
+  background-color: var(--page-bg-color);
+  color: var(--page-fg-color);
+  font-family: sans-serif;
+}
+
+tr.whitelisted {
+  background-color: #00FF0033;
+}
+td {
+  padding: 0.5ex 0.8ex 0.5ex 0.8ex;
+}

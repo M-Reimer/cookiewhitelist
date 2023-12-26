@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Cookie Whitelist",
+  "version": "1.0.0",
+
+  "description": "Deletes all cookies from domains, not added to the provided whitelist, as soon as you exit your browser.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{d5ecda5b-277f-4bb4-9deb-0d62aba8cce3}",
+      "strict_min_version": "115.0"
+    }
+  },
+
+  "icons": {"32": "page.png" },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_icon": "page.png"
+  },
+
+  "permissions": [
+    "cookies",
+    "<all_urls>",
+    "browsingData",
+    "storage"
+  ]
+}
