@@ -12,7 +12,11 @@
     }
   },
 
-  "icons": {"32": "page.png" },
+  "icons": {
+    "24": "icons/cookiewhitelist.svg",
+    "48": "icons/cookiewhitelist.svg",
+    "96": "icons/cookiewhitelist.svg"
+  },
 
   "background": {
     "scripts": ["utils/storage.js", "background.js"],
@@ -20,7 +24,7 @@
   },
 
   "browser_action": {
-    "default_icon": "page.png"
+    "default_icon": "icons/cookiewhitelist.svg"
   },
 
   "permissions": [

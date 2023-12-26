@@ -9,7 +9,8 @@ FILES = manifest.json \
         options.html \
         options.js \
         options.css \
-        utils/storage.js
+        utils/storage.js \
+        icons/cookiewhitelist.svg
 
 ADDON = cookiewhitelist
 
