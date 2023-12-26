@@ -15,7 +15,7 @@
   "icons": {"32": "page.png" },
 
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["utils/storage.js", "background.js"],
     "persistent": false
   },
 

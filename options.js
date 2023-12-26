@@ -23,7 +23,7 @@ async function CheckboxChanged(e) {
     let pref = RegExp.$1;
     let params = {};
     params[pref] = e.target.checked;
-    await browser.storage.local.set(params);
+    await Storage.set(params);
     await browser.runtime.sendMessage({type: "OptionsChanged"});
   }
 }
@@ -33,8 +33,8 @@ async function WLCheckboxChanged(e) {
   const tr = checkbox.parentNode.parentNode;
   const domain = tr.childNodes[1].innerText;
 
-  const prefs = await browser.storage.local.get();
-  const whitelist = prefs.whitelist || {};
+  const prefs = await Storage.get();
+  const whitelist = prefs.whitelist;
 
   if (checkbox.checked) {
     tr.classList.add("whitelisted");
@@ -45,7 +45,7 @@ async function WLCheckboxChanged(e) {
     delete whitelist[domain];
   }
 
-  await browser.storage.local.set({"whitelist": whitelist});
+  await Storage.set({"whitelist": whitelist});
 }
 
 async function FillDomainList() {
@@ -65,8 +65,8 @@ async function FillDomainList() {
   });
 
   // Integrate whitelisted domains even if they currently have no cookies
-  const prefs = await browser.storage.local.get();
-  const whitelist = prefs.whitelist || {};
+  const prefs = await Storage.get();
+  const whitelist = prefs.whitelist;
   Object.keys(whitelist).forEach((domain) => {
     if (!domains.includes(domain)) {
       domains.push(domain);
@@ -121,9 +121,9 @@ function init() {
 }
 
 function loadOptions() {
-  browser.storage.local.get().then((result) => {
-    get("clearcookies_checkbox").checked = result.clearcookies || false;
-    get("clearstorage_checkbox").checked = result.clearstorage || false;
+  Storage.get().then((result) => {
+    get("clearcookies_checkbox").checked = result.clearcookies;
+    get("clearstorage_checkbox").checked = result.clearstorage;
   });
 }
 

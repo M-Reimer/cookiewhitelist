@@ -57,9 +57,9 @@ async function ClearCookies() {
     await browser.storage.session.set({"started": true});
 
   // Clear cookies from non-whitelisted domains
-  const prefs = await browser.storage.local.get();
+  const prefs = await Storage.get();
   console.log("Before clearing");
-  if (prefs.clearcookies && prefs.whitelist) {
+  if (prefs.clearcookies) {
     console.log("Will clear");
     const cookies = await browser.cookies.getAll({"partitionKey": {}});
     console.log("Cookies", cookies);

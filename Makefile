@@ -5,9 +5,11 @@
 
 FILES = manifest.json \
         background.js \
+        default-preferences.json \
         options.html \
         options.js \
-        options.css
+        options.css \
+        utils/storage.js
 
 ADDON = cookiewhitelist
 
