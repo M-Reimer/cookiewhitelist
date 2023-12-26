@@ -64,12 +64,6 @@ async function FillDomainList() {
     }
   });
 
-
-  ["a.test.de", "b.test.de", "c.test.de", "a.test.com", "b.test.com"].forEach((domain) => {
-    domains.push(domain);
-    counter[domain] = 0;
-  });
-
   // Integrate whitelisted domains even if they currently have no cookies
   const prefs = await browser.storage.local.get();
   const whitelist = prefs.whitelist || {};
