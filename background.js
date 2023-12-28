@@ -49,18 +49,21 @@ function CookieToURL(cookie) {
 }
 
 async function ClearCookies() {
+  console.log("ClearCookies called");
+
   // Make sure we only clear cookies once per session.
   const sessionprefs = await browser.storage.session.get();
-  if (sessionprefs.started)
+  if (sessionprefs.started) {
+    console.log("ClearCookies already ran in this session!");
     return;
+  }
   else
     await browser.storage.session.set({"started": true});
 
   // Clear cookies from non-whitelisted domains
   const prefs = await Storage.get();
-  console.log("Before clearing");
   if (prefs.clearcookies) {
-    console.log("Will clear");
+    console.log("ClearCookies about to clear");
     const cookies = await browser.cookies.getAll({"partitionKey": {}});
     console.log("Cookies", cookies);
     for (const cookie of cookies) {
@@ -82,7 +85,8 @@ async function ClearCookies() {
     browser.browsingData.remove({}, {"localStorage": true, "indexedDB": true}).then(onRemoved, onError);
 }
 
-// Add event listeners and call "ClearCookies" once.
+// Add event listeners
 browser.browserAction.onClicked.addListener(openMyPage);
 browser.runtime.onStartup.addListener(ClearCookies);
-ClearCookies();
+
+//ClearCookies(); // Only enable for debugging and development
