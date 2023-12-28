@@ -10,7 +10,9 @@ FILES = manifest.json \
         options.js \
         options.css \
         utils/storage.js \
-        icons/cookiewhitelist.svg
+        utils/html-i18n.js \
+        icons/cookiewhitelist.svg \
+        $(wildcard _locales/*/messages.json)
 
 ADDON = cookiewhitelist
 
