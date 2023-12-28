@@ -76,14 +76,16 @@ async function FillDomainList() {
 
   // Sort the list.
   domains.sort((a, b) => {
-    const regex = /^(.*?)\.([^\.]+)\.([^\.]+)$/;
+    const regex = /^(.*?)\.?([^\.]+)\.([^\.]+)$/;
     partsa = a.match(regex);
-    partsb = a.match(regex);
+    partsb = b.match(regex);
 
     if (partsa && partsb) {
-      a = `partsa[1].partsa[2].partsa[0]`;
-      b = `partsb[1].partsb[2].partsb[0]`;
+      a = `${partsa[2]}.${partsa[3]}.${partsa[1]}`;
+      b = `${partsb[2]}.${partsb[3]}.${partsb[1]}`;
     }
+    else
+      console.log("Error ", a, b);
 
     if (a < b)
       return -1;
