@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "Deletes all cookies from domains, not added to the provided whitelist, as soon as you exit your browser.",
+    "description": "Description of the extension."
+  },
+
+  "general_headline": {
+    "message": "General settings",
+    "description": "Headline for the general settings in option page"
+  },
+  "general_description": {
+    "message": "Enable the first checkbox as soon as you configured your whitelist below. The second checkbox is optional but should be enabled for proper tracking protection.",
+    "description": "Description for the general settings section"
+  },
+  "clearcookies_label": {
+    "message": "Delete cookies, except from whitelisted domains, when Firefox is closed",
+    "description": "Used in the options page for the clear cookies checkbox"
+  },
+  "clearstorage_label": {
+    "message": "Delete localStorage and indexedDB, for all domains, when Firefox is closed",
+    "description": "Used in the options page for the clear storage checkbox"
+  },
+
+  "whitelist_headline": {
+    "message": "Domain whitelist",
+    "description": "Headline for the domain whitelist in option page"
+  },
+  "whitelist_description": {
+    "message": "Add domains to your whitelist by enabling the checkbox to its left.",
+    "description": "Description for the domain whitelist"
+  },
+  "domain_column": {
+    "message": "Domain",
+    "description": "Whitelist headline for the domain column"
+  },
+  "cookies_column": {
+    "message": "Cookies",
+    "description": "Whitelist headline for the cookie counter column"
+  }
+}

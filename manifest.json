@@ -3,7 +3,7 @@
   "name": "Cookie Whitelist",
   "version": "1.0.0",
 
-  "description": "Deletes all cookies from domains, not added to the provided whitelist, as soon as you exit your browser.",
+  "description": "__MSG_extensionDescription__",
 
   "browser_specific_settings": {
     "gecko": {
@@ -32,5 +32,7 @@
     "<all_urls>",
     "browsingData",
     "storage"
-  ]
+  ],
+
+  "default_locale": "en"
 }
