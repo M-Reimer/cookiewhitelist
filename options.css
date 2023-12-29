@@ -16,6 +16,17 @@ body {
   font-family: sans-serif;
 }
 
+div.checkbox {
+  display: flex;
+  margin: 4px 0px;
+}
+div.checkbox input {
+  margin: 2px 6px 2px 0px;
+}
+div.checkbox label {
+  margin: 1px 0px;
+}
+
 tr.whitelisted {
   background-color: #00FF0033;
 }
