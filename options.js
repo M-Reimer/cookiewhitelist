@@ -94,7 +94,7 @@ async function FillDomainList() {
     return 0;
   });
 
-  // Generate the domain list. TODO: Add click event listener
+  // Generate the domain list.
   const tbody = get("domains_body");
   domains.forEach((domain) => {
     const tr = tbody.appendChild(document.createElement("tr"));
