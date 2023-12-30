@@ -9,6 +9,7 @@ FILES = manifest.json \
         options.html \
         options.js \
         options.css \
+        utils/options.css \
         utils/storage.js \
         utils/html-i18n.js \
         icons/cookiewhitelist.svg \
